@@ -1,4 +1,18 @@
 # fmt: off
+############ PluginMetadata ###########
+from nonebot.plugin import PluginMetadata
+__plugin_meta__ = PluginMetadata(
+    name="nonebot-plugin-adsblocker", 
+    description="基于DeepSeek的群聊违规消息拦截",
+    usage="请阅读MD文档",
+    type="application",  
+    homepage="https://github.com/Heartestrella/plugin-adsblocker",
+    # config=YourConfigClass,
+    supported_adapters={"~onebot.v11"},
+)
+
+#######################################
+
 from nonebot import require
 require("nonebot_plugin_localstore")
 from typing import Optional
@@ -44,19 +58,6 @@ async def catch_qrcode(image_url: str) -> bool:
         except Exception as e:
             logger.error(f"处理二维码识别API响应时出错: {e}")
             return False
-
-#######################################
-############ PluginMetadata ###########
-from nonebot.plugin import PluginMetadata
-__plugin_meta__ = PluginMetadata(
-    name="nonebot-plugin-adsblocker", 
-    description="基于DeepSeek的群聊违规消息拦截",
-    usage="请阅读MD文档",
-    type="application",  
-    homepage="https://github.com/Heartestrella/plugin-adsblocker",
-    # config=YourConfigClass,
-    supported_adapters={"~onebot.v11"},
-)
 
 #######################################
 
